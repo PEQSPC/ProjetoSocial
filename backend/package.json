@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predev": "npm run build",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon dist/index.js\"",
-    "build": "rimraf dist && npx tsc",
-    "prestart": "npm run build",
+    "predev": "yarn build",
+    "dev": "concurrently \"yarn tsc --watch\" \"nodemon dist/index.js\"",
+    "build": "rimraf dist && yarn tsc",
+    "prestart": "yarn build",
     "start": "node dist/index.js"
   },
   "keywords": [],
