@@ -1,0 +1,24 @@
+{
+  "name": "projeto-social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predev": "npm run build",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon dist/index.js\"",
+    "build": "rimraf dist && npx tsc",
+    "prestart": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "concurrently": "^9.2.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.1.0"
+  }
+}
