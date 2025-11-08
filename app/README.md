@@ -9,10 +9,12 @@ Para desenvolvimento rápido usamos uma **Mock API** com `json-server` (ficheiro
 
 - **Node.js** 18 ou 20 LTS
 - **pnpm** (recomendado)
+
   ```bash
   corepack enable
   corepack prepare pnpm@latest --activate
   ```
+
 - VS Code (ou editor à escolha)
 
 ---
@@ -64,15 +66,18 @@ No `package.json`:
 }
 ```
 
-Instalar as dev-deps dos scripts:
+## Instalar as dev-deps dos scripts
+
 ```bash
 pnpm add -D json-server concurrently
 ```
 
 Correr **front + mock** ao mesmo tempo:
+
 ```bash
 pnpm dev:mock
-```
+
+```text
 - Frontend: http://localhost:5173  
 - Mock API: http://localhost:3001
 
@@ -92,12 +97,14 @@ export default {
 ```
 
 **src/index.css**
+
 ```css
 @import "tailwindcss";
 :root { color-scheme: light dark; }
 ```
 
 **tailwind.config.js**
+
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -118,6 +125,7 @@ module.exports = {
 ## 5) Alias `@` → `src`
 
 **tsconfig.app.json**
+
 ```json
 {
   "compilerOptions": {
@@ -133,6 +141,7 @@ module.exports = {
 ```
 
 **vite.config.ts**
+
 ```ts
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
@@ -152,7 +161,7 @@ export default defineConfig({
 
 ## 6) Estrutura de pastas
 
-```
+```text
 loja-social-backoffice/
 ├─ .env.local
 ├─ package.json
@@ -210,6 +219,7 @@ O ficheiro `server/mock/db.json` contém coleções como `beneficiaries`, `donor
 ## 8) Páginas mínimas
 
 **Dashboard** → `src/pages/dashboard/Dashboard.tsx`
+
 ```tsx
 export default function Dashboard() {
   return (
@@ -222,6 +232,7 @@ export default function Dashboard() {
 ```
 
 **Beneficiários (listagem)** → `src/pages/beneficiaries/List.tsx`
+
 ```tsx
 import { useState } from "react"
 import { useBeneficiaries } from "@/hooks/useBeneficiaries"
@@ -294,10 +305,13 @@ export default function BeneficiariesList() {
 ## 9) Ligar à API real (quando existir)
 
 Atualiza o `.env.local`:
+
 ```env
+
 VITE_API_URL=http://localhost:3000
 VITE_ENABLE_MOCKS=false
-```
+
+``` text
 Se a API tiver formato diferente (ex.: `GET /beneficiaries` a devolver `{data, page, total}`), adapta o `queryFn` no hook.
 
 ---

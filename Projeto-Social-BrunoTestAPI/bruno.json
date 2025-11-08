@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Projeto-Social-BrunoTestAPI",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

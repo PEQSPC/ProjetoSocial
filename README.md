@@ -4,7 +4,7 @@ A full-stack social project application with a React frontend (backoffice) and E
 
 ## Project Structure
 
-```
+```text
 ProjetoSocial/
 ├── app/                  # Frontend (React + Vite + TypeScript)
 │   ├── src/
