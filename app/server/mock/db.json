@@ -1,0 +1,146 @@
+{
+  "beneficiaries": [
+    {
+      "id": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "studentNumber": "A12345",
+      "name": "Maria Alves",
+      "email": "maria.alves@aluno.pt",
+      "phone": "912345678",
+      "course": "LESI",
+      "curricularYear": 2,
+      "nif": "234567890",
+      "birthDate": "2001-04-12",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08T14:10:47.974Z"
+    },
+    {
+      "id": "33f9",
+      "studentNumber": "9657",
+      "name": "Antonio Ferreira",
+      "email": "a9657@alunos.ipca.pt",
+      "phone": "913247831",
+      "course": "LESI",
+      "curricularYear": 3,
+      "nif": "234567890",
+      "birthDate": "1985-10-30",
+      "createdAt": "2025-11-08T11:37:38.221Z",
+      "updatedAt": "2025-11-08T12:03:14.267Z"
+    },
+    {
+      "id": "bdd2",
+      "studentNumber": "2044",
+      "name": "Mafalda Barao",
+      "email": "a20444@alunos.ipca.pt",
+      "phone": "923458912",
+      "course": "LESI",
+      "curricularYear": 3,
+      "nif": "234876519",
+      "birthDate": "2007-01-01",
+      "createdAt": "2025-11-08T14:14:41.752Z",
+      "updatedAt": "2025-11-08T14:14:41.752Z"
+    }
+  ],
+  "families": [
+    {
+      "id": "9e6c6bcc-f8f4-46af-81f4-fba649addb29",
+      "name": "Família Alves",
+      "notes": "",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
+    }
+  ],
+  "donors": [
+    {
+      "id": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "type": "COMPANY",
+      "name": "Mercado X",
+      "email": "contato@mercadox.pt",
+      "createdAt": "2025-11-08"
+    },
+    {
+      "id": "1f0ac738-58ac-45a8-8374-e04a874357dd",
+      "type": "PRIVATE",
+      "name": "João Silva",
+      "email": "joao@example.com",
+      "createdAt": "2025-11-08"
+    }
+  ],
+  "categories": [
+    {
+      "id": "e999a2a1-669a-487d-a9e9-bb355b6b5f43",
+      "name": "Mercearia",
+      "type": "FOOD"
+    },
+    {
+      "id": "0a8fb402-c7e8-4499-9bfd-36a10ed15504",
+      "name": "Higiene Pessoal",
+      "type": "HYGIENE"
+    },
+    {
+      "id": "f966bfa4-3aa2-4d97-9fa9-1b1785be507a",
+      "name": "Limpeza",
+      "type": "CLEANING"
+    }
+  ],
+  "items": [
+    {
+      "id": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "sku": "ARROZ-1KG",
+      "name": "Arroz 1kg",
+      "categoryId": "e999a2a1-669a-487d-a9e9-bb355b6b5f43",
+      "unit": "KG",
+      "minStock": 10
+    },
+    {
+      "id": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
+      "sku": "MASSA-500G",
+      "name": "Massa 500g",
+      "categoryId": "e999a2a1-669a-487d-a9e9-bb355b6b5f43",
+      "unit": "PACK",
+      "minStock": 20
+    }
+  ],
+  "stock_lots": [
+    {
+      "id": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "quantity": 50,
+      "expiryDate": "2025-11-08",
+      "entryDate": "2025-11-08"
+    }
+  ],
+  "donations": [
+    {
+      "id": "f12eb2d6-2901-43ee-9197-1c831c4c881d",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "date": "2025-11-08",
+      "notes": "Doação inicial"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "0a3f00e4-9927-491d-b98d-8049115f8201",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "scheduledAt": "2025-11-08T10:00:00Z",
+      "status": "NOT_DELIVERED",
+      "notes": "Cabaz base"
+    }
+  ],
+  "delivery_lines": [],
+  "schedules": [
+    {
+      "id": "fd704ccc-0f7f-4d7d-af69-b8a8a7492c90",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "date": "2025-11-08",
+      "notes": "Entrega mensal"
+    }
+  ],
+  "users": [
+    {
+      "id": "8548f758-5b6a-4ff7-a021-d1cded94de54",
+      "name": "Admin Loja",
+      "email": "admin@sas.local",
+      "role": "ADMIN"
+    }
+  ]
+}

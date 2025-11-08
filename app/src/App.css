@@ -1,0 +1,14 @@
+/* Opcional: estilos específicos do componente App.
+   A estilização principal está a ser feita com Tailwind (ver src/index.css). */
+
+:root {
+  --brand: #10b981; /* emerald-500 */
+}
+
+/* Exemplo de classe opcional (não é necessária se usares só Tailwind) */
+.btn {
+  border-radius: 0.75rem; /* ~rounded-xl */
+  padding: 0.5rem 1rem;
+  background: var(--brand);
+  color: #fff;
+}
