@@ -1,4 +1,4 @@
-import "./App.css"
+import "./App.css";
 
 export default function App() {
   return (
@@ -14,7 +14,7 @@ export default function App() {
 
       <main className="grid place-items-center p-8">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-emerald-400">Tailwind ON ✅</h2>
+          <h2 className="text-4xl font-bold text-emerald-400">Tailwind ON</h2>
           <p className="mt-2 text-slate-300">
             Setup pronto para começares o layout do backoffice.
           </p>
@@ -24,5 +24,5 @@ export default function App() {
         </div>
       </main>
     </div>
-  )
+  );
 }

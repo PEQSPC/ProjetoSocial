@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
 
 export type Column<T> = {
-  header: string
-  accessor: (row: T) => React.ReactNode
-  className?: string
-}
+  header: string;
+  accessor: (row: T) => React.ReactNode;
+  className?: string;
+};
 export function DataTable<T>({ rows, cols }: { rows: T[]; cols: Column<T>[] }) {
   return (
     <div className="table-wrap">
@@ -12,7 +12,12 @@ export function DataTable<T>({ rows, cols }: { rows: T[]; cols: Column<T>[] }) {
         <thead>
           <tr className="bg-white">
             {cols.map((c, i) => (
-              <th key={i} className={`th px-4 py-3 ${i === 0 ? "rounded-tl-2xl" : ""} ${i === cols.length-1 ? "rounded-tr-2xl" : ""}`}>
+              <th
+                key={i}
+                className={`th px-4 py-3 ${i === 0 ? "rounded-tl-2xl" : ""} ${
+                  i === cols.length - 1 ? "rounded-tr-2xl" : ""
+                }`}
+              >
                 {c.header}
               </th>
             ))}
@@ -22,12 +27,14 @@ export function DataTable<T>({ rows, cols }: { rows: T[]; cols: Column<T>[] }) {
           {rows.map((r, ri) => (
             <tr key={ri} className="row">
               {cols.map((c, ci) => (
-                <td key={ci} className={`td px-4 py-3 ${c.className ?? ""}`}>{c.accessor(r)}</td>
+                <td key={ci} className={`td px-4 py-3 ${c.className ?? ""}`}>
+                  {c.accessor(r)}
+                </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-  )
+  );
 }

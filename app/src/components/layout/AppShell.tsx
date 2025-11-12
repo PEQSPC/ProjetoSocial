@@ -1,11 +1,11 @@
 // src/components/layout/AppShell.tsx
-import { useState } from "react"
-import Topbar from "./Topbar"
-import { Sidebar } from "./Sidebar"   // <-- import nomeado
-import { Outlet } from "react-router-dom"
+import { useState } from "react";
+import Topbar from "./Topbar";
+import { Sidebar } from "./Sidebar"; // <-- import nomeado
+import { Outlet } from "react-router-dom";
 
 export default function AppShell() {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <div className="min-h-dvh flex">
@@ -31,5 +31,5 @@ export default function AppShell() {
         </main>
       </div>
     </div>
-  )
+  );
 }

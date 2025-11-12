@@ -42,9 +42,16 @@
   ],
   "families": [
     {
-      "id": "9e6c6bcc-f8f4-46af-81f4-fba649addb29",
-      "name": "Família Alves",
-      "notes": "",
+      "id": "36de",
+      "name": "Arroz",
+      "notes": "AA",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
+    },
+    {
+      "id": "12f8",
+      "name": "Bebidas",
+      "notes": "Armazem YY",
       "createdAt": "2025-11-08",
       "updatedAt": "2025-11-08"
     }
@@ -55,14 +62,24 @@
       "type": "COMPANY",
       "name": "Mercado X",
       "email": "contato@mercadox.pt",
-      "createdAt": "2025-11-08"
+      "nif": "509123456",
+      "address": "Rua do Comércio, 10",
+      "postalCode": "4710-001 Braga",
+      "notes": "Disponível para recolhas mensais",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
     },
     {
       "id": "1f0ac738-58ac-45a8-8374-e04a874357dd",
       "type": "PRIVATE",
       "name": "João Silva",
       "email": "joao@example.com",
-      "createdAt": "2025-11-08"
+      "nif": "123456789",
+      "address": "Av. Central, 50",
+      "postalCode": "4050-123 Porto",
+      "notes": "",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
     }
   ],
   "categories": [
@@ -87,52 +104,1273 @@
       "id": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
       "sku": "ARROZ-1KG",
       "name": "Arroz 1kg",
-      "categoryId": "e999a2a1-669a-487d-a9e9-bb355b6b5f43",
+      "familyId": "36de",
       "unit": "KG",
-      "minStock": 10
+      "minStock": 10,
+      "eanCodes": [
+        "5601234567890",
+        "5609876543217"
+      ],
+      "stockCurrent": 117,
+      "locationCode": "A1-03",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
     },
     {
       "id": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
       "sku": "MASSA-500G",
       "name": "Massa 500g",
-      "categoryId": "e999a2a1-669a-487d-a9e9-bb355b6b5f43",
+      "familyId": "12f8",
       "unit": "PACK",
-      "minStock": 20
+      "minStock": 20,
+      "eanCodes": [
+        "5602223334446"
+      ],
+      "stockCurrent": 36,
+      "locationCode": "A1-03",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
+    },
+    {
+      "id": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "sku": "LEITE-1L",
+      "name": "Leite 1L",
+      "familyId": "12f8",
+      "unit": "L",
+      "minStock": 30,
+      "eanCodes": [
+        "5605556667773",
+        "5605556667780"
+      ],
+      "stockCurrent": 48,
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
+    },
+    {
+      "id": "dce8",
+      "sku": "bol",
+      "name": "Bolachas Maria",
+      "familyId": "36de",
+      "unit": "UNIT",
+      "minStock": 40,
+      "eanCodes": [],
+      "stockCurrent": 0,
+      "locationCode": "A1-03",
+      "createdAt": "2025-11-08",
+      "updatedAt": "2025-11-08"
+    },
+    {
+      "id": "da27",
+      "sku": "massa",
+      "name": "Massa",
+      "familyId": "12f8",
+      "unit": "UNIT",
+      "minStock": 5,
+      "eanCodes": [],
+      "stockCurrent": 51,
+      "createdAt": "2025-11-09",
+      "updatedAt": "2025-11-09",
+      "locationCode": "A1-04"
     }
   ],
   "stock_lots": [
     {
       "id": "6da7ae31-ec3b-4648-857a-2368e396a986",
       "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lot": "L-ARZ-2025-01",
       "quantity": 50,
-      "expiryDate": "2025-11-08",
-      "entryDate": "2025-11-08"
+      "remainingQty": 50,
+      "expiryDate": "2026-01-31",
+      "entryDate": "2025-11-08",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150"
+    },
+    {
+      "id": "1b2c3d4e-aaaa-4b4b-bbbb-eeeeffff0001",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lot": "L-ARZ-2025-02",
+      "quantity": 30,
+      "remainingQty": 20,
+      "expiryDate": "2026-03-15",
+      "entryDate": "2025-11-10",
+      "donorId": "1f0ac738-58ac-45a8-8374-e04a874357dd"
+    },
+    {
+      "id": "2c3d4e5f-bbbb-4c4c-cccc-ffff00001111",
+      "itemId": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
+      "lot": "L-MASSA-2025-01",
+      "quantity": 40,
+      "remainingQty": 35,
+      "expiryDate": "2025-12-31",
+      "entryDate": "2025-11-08",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150"
+    },
+    {
+      "id": "3d4e5f60-cccc-4d4d-dddd-000011112222",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "lot": "L-LEITE-2025-01",
+      "quantity": 30,
+      "remainingQty": 18,
+      "expiryDate": "2026-02-01",
+      "entryDate": "2025-11-08",
+      "donorId": null
+    },
+    {
+      "id": "4e5f6071-dddd-4e4e-eeee-111122223333",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "lot": "L-LEITE-2025-02",
+      "quantity": 40,
+      "remainingQty": 30,
+      "expiryDate": "2026-04-01",
+      "entryDate": "2025-11-15",
+      "donorId": null
+    },
+    {
+      "id": "209e",
+      "itemId": "da27",
+      "lot": "AAT",
+      "quantity": 1,
+      "remainingQty": 1,
+      "entryDate": "2025-11-09",
+      "expiryDate": "2025-11-19"
+    },
+    {
+      "id": "725d",
+      "itemId": "dce8",
+      "lot": "NOLOT",
+      "quantity": 0,
+      "remainingQty": 0,
+      "entryDate": "2025-11-09",
+      "donorId": null
+    },
+    {
+      "id": "e200",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lot": "L-2025-11-09",
+      "quantity": 51,
+      "remainingQty": 47,
+      "entryDate": "2025-11-09",
+      "expiryDate": "2025-12-04",
+      "locationCode": "A1-4",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150"
+    }
+  ],
+  "stock_moves": [
+    {
+      "id": "m1",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lotId": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "type": "IN",
+      "quantity": 10,
+      "reason": "Contagem ciclo",
+      "docRef": "CNT-2025-001",
+      "fromLocation": null,
+      "toLocation": null,
+      "createdAt": "2025-11-08T10:23:00Z",
+      "user": "admin"
+    }
+  ],
+  "stock_counts": [
+    {
+      "id": "cnt-001",
+      "name": "Ciclo Novembro Estante A",
+      "status": "CLOSED",
+      "createdAt": "2025-11-08",
+      "closedAt": "2025-11-09T00:04:51.813Z",
+      "filters": {
+        "locationPrefix": "A"
+      }
+    },
+    {
+      "id": "117a",
+      "name": "Tetse",
+      "status": "CLOSED",
+      "createdAt": "2025-11-09T00:05:17.857Z",
+      "closedAt": "2025-11-09T00:56:47.566Z",
+      "filters": null
+    },
+    {
+      "id": "6da9",
+      "name": "VOntagem 20 Outubro",
+      "status": "CLOSED",
+      "createdAt": "2025-11-09T00:09:06.856Z",
+      "closedAt": "2025-11-09T12:58:54.160Z",
+      "filters": null
+    },
+    {
+      "id": "f6d4",
+      "name": "Novo",
+      "status": "CLOSED",
+      "createdAt": "2025-11-09T01:35:34.936Z",
+      "closedAt": "2025-11-09T01:36:19.981Z",
+      "filters": null
+    },
+    {
+      "id": "948a",
+      "name": "AA",
+      "status": "CLOSED",
+      "createdAt": "2025-11-09T01:36:55.342Z",
+      "closedAt": "2025-11-09T01:40:23.319Z",
+      "filters": null
+    },
+    {
+      "id": "fab4",
+      "name": "AA",
+      "status": "CLOSED",
+      "createdAt": "2025-11-09T01:39:01.643Z",
+      "closedAt": "2025-11-09T01:39:42.611Z",
+      "filters": {
+        "locationCode": "A1-03"
+      }
+    },
+    {
+      "id": "13c4",
+      "name": "NOVA2",
+      "status": "OPEN",
+      "createdAt": "2025-11-09T12:30:12.629Z",
+      "closedAt": null,
+      "filters": null
+    }
+  ],
+  "stock_count_lines": [
+    {
+      "id": "cnt-001-1",
+      "countId": "cnt-001",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lotId": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "expectedQty": 50,
+      "countedQty": 49,
+      "delta": -1,
+      "note": null
+    },
+    {
+      "id": "1213",
+      "countId": "117a",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lotId": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "expectedQty": 50,
+      "countedQty": 51,
+      "delta": 1,
+      "note": null
+    },
+    {
+      "id": "7302",
+      "countId": "117a",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "lotId": "3d4e5f60-cccc-4d4d-dddd-000011112222",
+      "expectedQty": 18,
+      "countedQty": 17,
+      "delta": -1,
+      "note": "Ja passou da validade"
+    },
+    {
+      "id": "b5f5",
+      "countId": "6da9",
+      "itemId": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
+      "lotId": "2c3d4e5f-bbbb-4c4c-cccc-ffff00001111",
+      "expectedQty": 35,
+      "countedQty": 35,
+      "delta": 0,
+      "note": "1"
+    },
+    {
+      "id": "7270",
+      "countId": "117a",
+      "itemId": "dce8",
+      "lotId": "725d",
+      "expectedQty": 0,
+      "countedQty": 0,
+      "delta": 0,
+      "note": "a"
+    },
+    {
+      "id": "12be",
+      "countId": "f6d4",
+      "itemId": "dce8",
+      "lotId": "725d",
+      "expectedQty": 0,
+      "countedQty": 0,
+      "delta": 0,
+      "note": null
+    },
+    {
+      "id": "69be",
+      "countId": "f6d4",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lotId": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "expectedQty": 50,
+      "countedQty": 50,
+      "delta": 0,
+      "note": null
+    },
+    {
+      "id": "19de",
+      "countId": "948a",
+      "itemId": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
+      "lotId": "2c3d4e5f-bbbb-4c4c-cccc-ffff00001111",
+      "expectedQty": 35,
+      "countedQty": 35,
+      "delta": 0,
+      "note": null
+    },
+    {
+      "id": "8e04",
+      "countId": "fab4",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "lotId": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "expectedQty": 50,
+      "countedQty": 51,
+      "delta": 1,
+      "note": null
+    },
+    {
+      "id": "a91b",
+      "countId": "13c4",
+      "itemId": "dce8",
+      "lotId": "725d",
+      "expectedQty": 0,
+      "countedQty": 5,
+      "delta": 5,
+      "note": "OK"
     }
   ],
   "donations": [
     {
       "id": "f12eb2d6-2901-43ee-9197-1c831c4c881d",
       "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "donorName": "Mercado X",
       "date": "2025-11-08",
+      "reference": null,
       "notes": "Doação inicial"
+    },
+    {
+      "id": "70c2",
+      "date": "2025-11-09",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "reference": null,
+      "notes": null,
+      "donorName": "Mercado X"
+    },
+    {
+      "id": "858a",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "date": "2025-11-09",
+      "reference": null,
+      "notes": null
+    },
+    {
+      "id": "34de",
+      "donorId": "1f0ac738-58ac-45a8-8374-e04a874357dd",
+      "date": "2025-11-09",
+      "reference": "TESTE",
+      "notes": "IPCA"
+    },
+    {
+      "id": "92a6",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "date": "2025-11-09",
+      "reference": "AA",
+      "notes": "BB"
+    },
+    {
+      "id": "7e41",
+      "date": "2025-11-09",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "donorName": "Mercado X",
+      "reference": "DOC-XX",
+      "note": "Boa"
+    },
+    {
+      "id": "010a",
+      "date": "2025-11-09",
+      "donorId": "1f0ac738-58ac-45a8-8374-e04a874357dd",
+      "donorName": "João Silva",
+      "reference": "OK",
+      "note": null
+    },
+    {
+      "id": "7976",
+      "date": "2025-11-09",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "donorName": "Mercado X",
+      "reference": "Doc2025-4",
+      "note": "Teste01"
+    },
+    {
+      "id": "e7e7",
+      "date": "2025-11-09",
+      "donorId": "1f0ac738-58ac-45a8-8374-e04a874357dd",
+      "donorName": "João Silva",
+      "reference": "DOC",
+      "note": null
+    }
+  ],
+  "donation_lines": [
+    {
+      "id": "dn-ln-1",
+      "donationId": "f12eb2d6-2901-43ee-9197-1c831c4c881d",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 20,
+      "lot": "L-ARZ-2025-03",
+      "expiryDate": "2026-06-30",
+      "locationCode": null,
+      "note": null
+    },
+    {
+      "id": "810b",
+      "donationId": "70c2",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 4,
+      "lot": "L2025-11",
+      "expiryDate": "2025-11-25",
+      "locationCode": "A1-03",
+      "note": null
+    },
+    {
+      "id": "f56e",
+      "donationId": "858a",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "quantity": 3,
+      "lot": "L-2025-11-09",
+      "expiryDate": "2025-11-20",
+      "locationCode": "A1-05",
+      "note": null
+    },
+    {
+      "id": "1afc",
+      "donationId": "858a",
+      "itemId": "dce8",
+      "quantity": 10,
+      "lot": "L2025",
+      "expiryDate": "2025-12-05",
+      "locationCode": "A1-03",
+      "note": null
+    },
+    {
+      "id": "ab3c",
+      "donationId": "34de",
+      "itemId": "da27",
+      "quantity": 50,
+      "lot": "L-2025-11-09",
+      "expiryDate": "2025-11-29",
+      "locationCode": "A5-8",
+      "note": null
+    },
+    {
+      "id": "fd9e",
+      "donationId": "92a6",
+      "itemId": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
+      "quantity": 1,
+      "lot": "L-2025-11-09",
+      "expiryDate": "2025-12-06",
+      "locationCode": "E1",
+      "note": null
+    },
+    {
+      "id": "277d",
+      "donationId": "7e41",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 100,
+      "lot": null,
+      "expiryDate": null,
+      "locationCode": null,
+      "note": null
+    },
+    {
+      "id": "da0a",
+      "donationId": "010a",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 60,
+      "lot": null,
+      "expiryDate": null,
+      "locationCode": "A3-02",
+      "note": null
+    },
+    {
+      "id": "5ca0",
+      "donationId": "7976",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 50,
+      "lot": "L-2025-11-09",
+      "expiryDate": "2025-11-28",
+      "locationCode": "A1-4",
+      "note": "Teste Arroz"
+    },
+    {
+      "id": "11bc",
+      "donationId": "e7e7",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "L-2025-11-09",
+      "expiryDate": "2025-12-04",
+      "locationCode": null,
+      "note": null
     }
   ],
   "deliveries": [
     {
       "id": "0a3f00e4-9927-491d-b98d-8049115f8201",
       "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
       "scheduledAt": "2025-11-08T10:00:00Z",
+      "deliveredAt": null,
       "status": "NOT_DELIVERED",
+      "reference": null,
       "notes": "Cabaz base"
+    },
+    {
+      "id": "f856",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T16:40:24.196Z",
+      "updatedAt": "2025-11-09T16:40:24.196Z"
+    },
+    {
+      "id": "d560",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T16:43:51.400Z",
+      "updatedAt": "2025-11-09T16:43:51.400Z"
+    },
+    {
+      "id": "8805",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T16:52:59.624Z",
+      "updatedAt": "2025-11-09T16:52:59.624Z"
+    },
+    {
+      "id": "2ac6",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T16:55:40.265Z",
+      "updatedAt": "2025-11-09T16:55:40.265Z"
+    },
+    {
+      "id": "fda1",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:13:47.652Z",
+      "updatedAt": "2025-11-09T17:13:47.652Z"
+    },
+    {
+      "id": "8d17",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:27:36.896Z",
+      "updatedAt": "2025-11-09T17:27:36.896Z"
+    },
+    {
+      "id": "c0c8",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:33:05.783Z",
+      "updatedAt": "2025-11-09T17:33:05.783Z"
+    },
+    {
+      "id": "112d",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:33:12.425Z",
+      "updatedAt": "2025-11-09T17:33:12.425Z"
+    },
+    {
+      "id": "9bbe",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:33:39.736Z",
+      "updatedAt": "2025-11-09T17:33:39.736Z"
+    },
+    {
+      "id": "9cf7",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:34:21.996Z",
+      "updatedAt": "2025-11-09T17:34:21.996Z"
+    },
+    {
+      "id": "44f8",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:36:34.197Z",
+      "updatedAt": "2025-11-09T17:36:34.197Z"
+    },
+    {
+      "id": "e0b0",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:37:04.649Z",
+      "updatedAt": "2025-11-09T17:37:04.649Z"
+    },
+    {
+      "id": "831c",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:40:36.017Z",
+      "updatedAt": "2025-11-09T17:40:36.017Z"
+    },
+    {
+      "id": "0a75",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:42:59.007Z",
+      "updatedAt": "2025-11-09T17:42:59.007Z"
+    },
+    {
+      "id": "2339",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:45:47.579Z",
+      "updatedAt": "2025-11-09T17:45:47.579Z"
+    },
+    {
+      "id": "949f",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:52:02.146Z",
+      "updatedAt": "2025-11-09T17:52:02.146Z"
+    },
+    {
+      "id": "51a2",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:54:23.538Z",
+      "updatedAt": "2025-11-09T17:54:23.538Z"
+    },
+    {
+      "id": "c833",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T17:59:13.349Z",
+      "updatedAt": "2025-11-09T17:59:13.349Z"
+    },
+    {
+      "id": "5b32",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "DELIVERED",
+      "deliveredAt": "2025-11-09T18:01:38.574Z",
+      "notes": "",
+      "createdAt": "2025-11-09T18:01:35.949Z",
+      "updatedAt": "2025-11-09T18:01:38.574Z"
+    },
+    {
+      "id": "4615",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:02:11.417Z",
+      "updatedAt": "2025-11-09T18:02:11.417Z"
+    },
+    {
+      "id": "53ee",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "DELIVERED",
+      "deliveredAt": "2025-11-09T18:03:00.667Z",
+      "notes": "",
+      "createdAt": "2025-11-09T18:02:56.883Z",
+      "updatedAt": "2025-11-09T18:03:00.667Z"
+    },
+    {
+      "id": "98a2",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "DELIVERED",
+      "deliveredAt": "2025-11-09T18:03:22.174Z",
+      "notes": "",
+      "createdAt": "2025-11-09T18:03:22.101Z",
+      "updatedAt": "2025-11-09T18:03:22.174Z"
+    },
+    {
+      "id": "1213",
+      "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
+      "beneficiaryName": "Maria Alves",
+      "scheduledId": null,
+      "status": "DELIVERED",
+      "deliveredAt": "2025-11-09T18:07:09.703Z",
+      "notes": "",
+      "createdAt": "2025-11-09T18:07:09.474Z",
+      "updatedAt": "2025-11-09T18:07:09.703Z"
+    },
+    {
+      "id": "9586",
+      "beneficiaryId": "bdd2",
+      "beneficiaryName": "Mafalda Barao",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:07:29.377Z",
+      "updatedAt": "2025-11-09T18:07:29.377Z"
+    },
+    {
+      "id": "edcc",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:34.651Z",
+      "updatedAt": "2025-11-09T18:48:34.651Z"
+    },
+    {
+      "id": "eb1f",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:35.858Z",
+      "updatedAt": "2025-11-09T18:48:35.858Z"
+    },
+    {
+      "id": "0754",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:36.026Z",
+      "updatedAt": "2025-11-09T18:48:36.026Z"
+    },
+    {
+      "id": "3eac",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:36.194Z",
+      "updatedAt": "2025-11-09T18:48:36.194Z"
+    },
+    {
+      "id": "6041",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:36.650Z",
+      "updatedAt": "2025-11-09T18:48:36.650Z"
+    },
+    {
+      "id": "4a1f",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:36.946Z",
+      "updatedAt": "2025-11-09T18:48:36.946Z"
+    },
+    {
+      "id": "aa76",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:37.210Z",
+      "updatedAt": "2025-11-09T18:48:37.210Z"
+    },
+    {
+      "id": "9d40",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:37.426Z",
+      "updatedAt": "2025-11-09T18:48:37.426Z"
+    },
+    {
+      "id": "69fa",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:37.994Z",
+      "updatedAt": "2025-11-09T18:48:37.994Z"
+    },
+    {
+      "id": "5f37",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:38.162Z",
+      "updatedAt": "2025-11-09T18:48:38.162Z"
+    },
+    {
+      "id": "dca6",
+      "beneficiaryId": "33f9",
+      "beneficiaryName": "Antonio Ferreira",
+      "scheduledId": null,
+      "status": "NOT_DELIVERED",
+      "deliveredAt": null,
+      "notes": "",
+      "createdAt": "2025-11-09T18:48:45.419Z",
+      "updatedAt": "2025-11-09T18:48:45.419Z"
     }
   ],
-  "delivery_lines": [],
+  "delivery_lines": [
+    {
+      "id": "dl-ln-1",
+      "deliveryId": "0a3f00e4-9927-491d-b98d-8049115f8201",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "lotId": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "lot": "L-ARZ-2025-03",
+      "quantity": 2,
+      "unit": "KG",
+      "note": null
+    },
+    {
+      "id": "eb09",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 50,
+      "lot": null,
+      "note": "AA",
+      "deliveryId": "f856"
+    },
+    {
+      "id": "f3dc",
+      "itemId": "cea097de-6b2f-4f20-8b4b-a5252c3b10a0",
+      "itemName": "Massa 500g",
+      "quantity": 2,
+      "lot": null,
+      "note": "",
+      "deliveryId": "d560"
+    },
+    {
+      "id": "cb5b",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "note": "OK",
+      "deliveryId": "8805"
+    },
+    {
+      "id": "407f",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "2ac6"
+    },
+    {
+      "id": "f7bf",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "6da7ae31-ec3b-4648-857a-2368e396a986",
+      "note": "",
+      "deliveryId": "fda1"
+    },
+    {
+      "id": "7964",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "itemName": "Leite 1L",
+      "quantity": 2,
+      "lot": "3d4e5f60-cccc-4d4d-dddd-000011112222",
+      "note": "",
+      "deliveryId": "8d17"
+    },
+    {
+      "id": "3465",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "c0c8"
+    },
+    {
+      "id": "74c6",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "112d"
+    },
+    {
+      "id": "8fc7",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "itemName": "Leite 1L",
+      "quantity": 2,
+      "lot": "3d4e5f60-cccc-4d4d-dddd-000011112222",
+      "note": "",
+      "deliveryId": "9bbe"
+    },
+    {
+      "id": "a124",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 2,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "9cf7"
+    },
+    {
+      "id": "3762",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "44f8"
+    },
+    {
+      "id": "ef78",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "itemName": "Leite 1L",
+      "quantity": 1,
+      "lot": "3d4e5f60-cccc-4d4d-dddd-000011112222",
+      "note": "",
+      "deliveryId": "e0b0"
+    },
+    {
+      "id": "7687",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "831c"
+    },
+    {
+      "id": "a922",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "0a75"
+    },
+    {
+      "id": "f570",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "2339"
+    },
+    {
+      "id": "ab97",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "949f"
+    },
+    {
+      "id": "fec5",
+      "itemId": "1b7f6b2c-2d4a-49a5-9c77-1b1f9a9f1111",
+      "itemName": "Leite 1L",
+      "quantity": 1,
+      "lot": "3d4e5f60-cccc-4d4d-dddd-000011112222",
+      "note": "",
+      "deliveryId": "51a2"
+    },
+    {
+      "id": "2a7d",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "c833"
+    },
+    {
+      "id": "32e0",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "5b32"
+    },
+    {
+      "id": "9221",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "4615"
+    },
+    {
+      "id": "80e3",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "53ee"
+    },
+    {
+      "id": "3bfa",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "98a2"
+    },
+    {
+      "id": "fca7",
+      "itemId": "638220cb-caba-4fde-9fa7-0aa6085ae4f1",
+      "itemName": "Arroz 1kg",
+      "quantity": 1,
+      "lot": "e200",
+      "note": "",
+      "deliveryId": "1213"
+    },
+    {
+      "id": "ea00",
+      "itemId": "da27",
+      "itemName": "Massa",
+      "quantity": 1,
+      "lot": "209e",
+      "note": "",
+      "deliveryId": "9586"
+    },
+    {
+      "id": "f4d0",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "edcc"
+    },
+    {
+      "id": "488c",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "eb1f"
+    },
+    {
+      "id": "862d",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "0754"
+    },
+    {
+      "id": "f9ef",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "3eac"
+    },
+    {
+      "id": "bc4d",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "6041"
+    },
+    {
+      "id": "0f24",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "4a1f"
+    },
+    {
+      "id": "5b46",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "aa76"
+    },
+    {
+      "id": "75a0",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "9d40"
+    },
+    {
+      "id": "caba",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "69fa"
+    },
+    {
+      "id": "158f",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "5f37"
+    },
+    {
+      "id": "6feb",
+      "itemId": "dce8",
+      "itemName": "Bolachas Maria",
+      "quantity": 1,
+      "lot": "725d",
+      "note": "",
+      "deliveryId": "dca6"
+    }
+  ],
   "schedules": [
     {
-      "id": "fd704ccc-0f7f-4d7d-af69-b8a8a7492c90",
+      "id": "sch-0001",
+      "type": "DELIVERY",
+      "status": "PLANNED",
+      "date": "2025-11-15",
+      "timeSlot": "09:00-12:00",
       "beneficiaryId": "99375895-58f3-436b-bf3a-fef79562cc00",
-      "date": "2025-11-08",
-      "notes": "Entrega mensal"
+      "beneficiaryName": "Maria Alves",
+      "address": "Rua do Instituto, 123",
+      "notes": "Entregar cabaz mensal",
+      "deliveryId": null,
+      "donationId": null,
+      "assignee": "vol-001",
+      "assigneeName": "Carlos Rocha",
+      "createdAt": "2025-11-10T09:30:00Z",
+      "updatedAt": "2025-11-10T09:30:00Z"
+    },
+    {
+      "id": "sch-0002",
+      "type": "PICKUP",
+      "status": "CONFIRMED",
+      "date": "2025-11-16",
+      "timeSlot": "14:00-16:00",
+      "donorId": "744c024a-6a84-4f91-af1e-c4f0db7cb150",
+      "donorName": "Mercado X",
+      "address": "Rua do Comércio, 10, Braga",
+      "notes": "Recolha mensal",
+      "donationId": null,
+      "deliveryId": null,
+      "assignee": "vol-002",
+      "assigneeName": "Ana Martins",
+      "createdAt": "2025-11-10T10:00:00Z",
+      "updatedAt": "2025-11-10T10:20:00Z"
     }
   ],
   "users": [
@@ -140,7 +1378,40 @@
       "id": "8548f758-5b6a-4ff7-a021-d1cded94de54",
       "name": "Admin Loja",
       "email": "admin@sas.local",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "passwordHash": "$2b$10$WV2LkDB3psxxcNqxy9nfq.x4BLKbw1p.vI.hh4/tof77bhwaH2nza",
+      "isActive": true,
+      "createdAt": "2024-02-01T00:00:00Z",
+      "lastLoginAt": null
+    },
+    {
+      "id": "d3a7a9c9-2c55-4a37-a6b6-472e399e8f10",
+      "name": "Operador",
+      "email": "operador@sas.local",
+      "role": "STAFF",
+      "passwordHash": "$2b$10$6OU/diLLTIgrBkDhzkxUB.CueyvJglJaRg0TqIfPW4HyWEbIymWRC",
+      "isActive": true,
+      "createdAt": "2024-02-01T00:00:00Z",
+      "lastLoginAt": null
+    },
+    {
+      "id": "7e1f2a2a-11c0-4f9e-bc9a-3f7a7f6a0a0a",
+      "name": "Consulta",
+      "email": "consulta@sas.local",
+      "role": "VIEWER",
+      "passwordHash": "$2b$10$mRxuHEydTncgtoAZVYYjzeipgJA.ffVmCpzrBtXjHSUhVKc1mIqKq",
+      "isActive": true,
+      "createdAt": "2024-02-15T00:00:00Z",
+      "lastLoginAt": null
+    },
+    {
+      "id": "cfd8",
+      "name": "Antonio Ferreira",
+      "email": "ferreira@inforfast.pt",
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2025-11-09T22:46:21.350Z",
+      "passwordHash": "$2b$10$QycEBUPZP/UsDUuZWN0Wx.Y5dyLejQt/O5d1TG9zsZzNUcQR4d0zi"
     }
   ]
 }

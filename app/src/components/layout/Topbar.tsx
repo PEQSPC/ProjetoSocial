@@ -1,22 +1,24 @@
 // src/components/layout/Topbar.tsx
-import { Search, Bell, ChevronDown, Sun, Moon } from "lucide-react"
-import { useEffect, useState } from "react"
+import { Search, Bell, ChevronDown, Sun, Moon } from "lucide-react";
+import { useEffect, useState } from "react";
 
-type Props = { showLogo?: boolean }
+type Props = { showLogo?: boolean };
 
 export default function Topbar({ showLogo = true }: Props) {
-  const [theme, setTheme] = useState<"light"|"dark">(() => {
-    const saved = localStorage.getItem("theme")
-    if (saved === "light" || saved === "dark") return saved
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  })
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") return saved;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
 
   useEffect(() => {
-    const root = document.documentElement
-    if (theme === "dark") root.classList.add("dark")
-    else root.classList.remove("dark")
-    localStorage.setItem("theme", theme)
-  }, [theme])
+    const root = document.documentElement;
+    if (theme === "dark") root.classList.add("dark");
+    else root.classList.remove("dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur dark:bg-slate-900/70 dark:border-slate-800">
@@ -51,8 +53,14 @@ export default function Topbar({ showLogo = true }: Props) {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             title={theme === "dark" ? "Modo claro" : "Modo escuro"}
           >
-            {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
-            <span className="hidden sm:inline text-sm">{theme === "dark" ? "Claro" : "Escuro"}</span>
+            {theme === "dark" ? (
+              <Sun className="size-4" />
+            ) : (
+              <Moon className="size-4" />
+            )}
+            <span className="hidden sm:inline text-sm">
+              {theme === "dark" ? "Claro" : "Escuro"}
+            </span>
           </button>
 
           <button className="btn" aria-haspopup="menu" aria-expanded="false">
@@ -63,5 +71,5 @@ export default function Topbar({ showLogo = true }: Props) {
         </div>
       </div>
     </header>
-  )
+  );
 }
