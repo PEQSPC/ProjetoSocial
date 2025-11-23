@@ -1,6 +1,5 @@
-
-export type CreateBeneficiaryDTO ={
-    name: string;
-    age: number;
-    address: string;
-}
+export type CreateBeneficiaryDTO = {
+  name: string;
+  age: number;
+  address: string;
+};
