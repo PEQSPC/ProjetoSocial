@@ -1,13 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
-import { IAuthService } from '../services/interfaces/IAuthService';
+
+import { IAuthService } from '../services/interfaces/IAuthService.js';
 import {
   loginSchema,
   registerSchema,
   refreshTokenSchema,
   changePasswordSchema,
-} from '../types/dto/auth.dto';
-import { ValidationError } from '../utils/errors';
-import { extractTokenFromHeader } from '../config/jwt';
+} from '../types/dto/auth.dto.js';
+import { ValidationError } from '../utils/errors.js';
+import { extractTokenFromHeader } from '../config/jwt.js';
 
 export class AuthController {
   constructor(private readonly authService: IAuthService) {}
@@ -15,6 +16,7 @@ export class AuthController {
   // #region Register
   register = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+        
       const validatedData = registerSchema.parse(req.body);
       const result = await this.authService.register(validatedData);
 

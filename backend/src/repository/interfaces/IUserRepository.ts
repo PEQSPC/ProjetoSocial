@@ -1,4 +1,4 @@
-import { AppUser } from '../../models/AppUser';
+import { AppUser } from '../../models/AppUser.js';
 
 export interface IUserRepository {
   create(data: {

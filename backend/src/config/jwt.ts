@@ -1,16 +1,16 @@
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 
-// #region Configuration
+// #region Configuration with proper typing
 export const jwtConfig = {
   access: {
     secret: process.env.JWT_ACCESS_SECRET || 'fallback-secret-change-in-prod',
-    expiresIn: process.env.JWT_ACCESS_EXPIRATION || '15m',
+    expiresIn  : process.env.JWT_ACCESS_EXPIRATION || '15m',
   },
   refresh: {
     secret: process.env.JWT_REFRESH_SECRET || 'fallback-refresh-secret',
     expiresIn: process.env.JWT_REFRESH_EXPIRATION || '7d',
   },
-};
+} as const;
 
 // Validate secrets on startup
 if (
@@ -43,9 +43,12 @@ export const generateAccessToken = (userId: string, email: string, role: string)
     type: 'access',
   };
 
-  return jwt.sign(payload, jwtConfig.access.secret, {
-    expiresIn: jwtConfig.access.expiresIn,
-  });
+  // Explicit SignOptions type
+  const options: SignOptions = {
+    expiresIn: 15 * 60, // 15 minutes
+  };
+
+  return jwt.sign(payload, jwtConfig.access.secret, options);
 };
 
 /**
@@ -60,9 +63,12 @@ export const generateRefreshToken = (userId: string, email: string, role: string
     type: 'refresh',
   };
 
-  return jwt.sign(payload, jwtConfig.refresh.secret, {
-    expiresIn: jwtConfig.refresh.expiresIn,
-  });
+  // Explicit SignOptions type
+  const options: SignOptions = {
+    expiresIn: 7 * 24 * 60 * 60, // 7 days
+  };
+
+  return jwt.sign(payload, jwtConfig.refresh.secret, options);
 };
 
 /**

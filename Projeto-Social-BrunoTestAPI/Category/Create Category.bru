@@ -7,16 +7,20 @@ meta {
 post {
   url: http://localhost:3000/api/categories
   body: json
-  auth: inherit
+  auth: bearer
 }
 
 headers {
   Content-Type: application/json
 }
 
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMmIzOWZhMi0xOTY5LTQ3ZjUtYmI5MC05MDJiYzhhOTc4MWUiLCJlbWFpbCI6InRlbGVzZ29tZXM5NkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzYzOTQ3MDgwLCJleHAiOjE3NjM5NDc5ODB9.vPQFsHZVnikjf2UcP_lvG05uAZ6Bej2gINUlX6I7QnM
+}
+
 body:json {
   {
-    "name": "Fresh Fruits",
+    "name": "Pessego",
     "type": "FOOD" 
   }
 }

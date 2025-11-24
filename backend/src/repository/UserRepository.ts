@@ -1,9 +1,11 @@
-import { PrismaClient } from '@prisma/client';
-import { AppUser } from '../models/AppUser';
+import { prisma } from '../config/prisma.js';
+import { Prisma } from '../generated/prisma/client.js';
+import { AppUser } from '../models/AppUser.js';
 import { IUserRepository } from './interfaces/IUserRepository';
 
+
 export class UserRepository implements IUserRepository {
-  constructor(private readonly prisma: PrismaClient) {}
+  constructor(private readonly prismaClient: typeof prisma) {}
 
   async create(data: {
     name: string;
@@ -12,11 +14,11 @@ export class UserRepository implements IUserRepository {
     role: string;
     isActive: boolean;
   }): Promise<AppUser> {
-    const user = await this.prisma.appUser.create({
+    const user = await this.prismaClient.appUser.create({
       data: {
         name: data.name,
         email: data.email,
-        passwordHash: data.passwordHash,
+        password : data.passwordHash,
         role: data.role,
         isActive: data.isActive,
       },
@@ -26,7 +28,7 @@ export class UserRepository implements IUserRepository {
   }
 
   async findById(id: string): Promise<AppUser | null> {
-    const user = await this.prisma.appUser.findUnique({
+    const user = await this.prismaClient.appUser.findUnique({
       where: { id },
     });
 
@@ -35,7 +37,7 @@ export class UserRepository implements IUserRepository {
   }
 
   async findByEmail(email: string): Promise<AppUser | null> {
-    const user = await this.prisma.appUser.findUnique({
+    const user = await this.prismaClient.appUser.findUnique({
       where: { email },
     });
 
@@ -44,16 +46,16 @@ export class UserRepository implements IUserRepository {
   }
 
   async updateLastLogin(id: string): Promise<void> {
-    await this.prisma.appUser.update({
+    await this.prismaClient.appUser.update({
       where: { id },
       data: { lastLoginAt: new Date() },
     });
   }
 
   async updatePassword(id: string, passwordHash: string): Promise<void> {
-    await this.prisma.appUser.update({
+    await this.prismaClient.appUser.update({
       where: { id },
-      data: { passwordHash },
+      data: { password: passwordHash },
     });
   }
 
@@ -63,7 +65,7 @@ export class UserRepository implements IUserRepository {
       prismaUser.name,
       prismaUser.email,
       prismaUser.role,
-      prismaUser.passwordHash,
+      prismaUser.password,
       prismaUser.isActive,
       prismaUser.createdAt,
       prismaUser.lastLoginAt

@@ -1,0 +1,27 @@
+meta {
+  name: Login
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "email": "telesgomes96@gmail.com",
+      "password": "Ddc173bc##"
+    }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

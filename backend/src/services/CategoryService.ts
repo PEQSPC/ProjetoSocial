@@ -125,6 +125,12 @@ export class CategoryService implements ICategoryService {
       );
     }
 
+    if(data.name == existingCategory.name){
+      throw new ConflictError(
+        `The new name is the same as the current name. Please provide a different name to update.`
+      );
+    }
+
     // Check for name conflicts
     if (data.name && data.name.toLowerCase() !== existingCategory.name.toLowerCase()) {
       const nameExists = await this.repo.existsByName(data.name, id);

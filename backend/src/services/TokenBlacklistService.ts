@@ -5,8 +5,10 @@
  * In production, use Redis with TTL for automatic cleanup
  */
 
+import { ITokenBlacklistService } from "./interfaces/ITokenBlacklistService.js";
+
 // #region In-Memory Blacklist (Development)
-class TokenBlacklistService {
+class TokenBlacklistService implements ITokenBlacklistService {
   private blacklist: Set<string> = new Set();
 
   /**

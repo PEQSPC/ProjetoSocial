@@ -1,13 +1,13 @@
-import { IAuthService } from './interfaces/IAuthService';
-import { IUserRepository } from '../repositories/interfaces/IUserRepository';
-import { LoginDTO, RegisterDTO, LoginResponseDTO, RefreshTokenResponseDTO } from '../types/dto/auth.dto';
-import { hashPassword, comparePassword } from '../utils/password';
-import { generateTokenPair, verifyRefreshToken } from '../config/jwt';
-import { tokenBlacklistService } from './TokenBlacklistService';
-import { ConflictError, UnauthorizedError, NotFoundError } from '../utils/errors';
+import { IAuthService } from './interfaces/IAuthService.js';
+import { IUserRepository } from '../repository/interfaces/IUserRepository.js';
+import { LoginDTO, RegisterDTO, LoginResponseDTO, RefreshTokenResponseDTO } from '../types/dto/auth.dto.js';
+import { hashPassword, comparePassword } from '../utils/password.js';
+import { generateTokenPair, verifyRefreshToken } from '../config/jwt.js';
+import { ITokenBlacklistService } from './interfaces/ITokenBlacklistService.js';
+import { ConflictError, UnauthorizedError, NotFoundError } from '../utils/errors.js';
 
 export class AuthService implements IAuthService {
-  constructor(private readonly userRepository: IUserRepository) {}
+  constructor(private readonly userRepository: IUserRepository, private readonly tokenBlacklistService: ITokenBlacklistService) {}
 
   // #region Register
   async register(data: RegisterDTO): Promise<LoginResponseDTO> {
@@ -53,6 +53,7 @@ export class AuthService implements IAuthService {
   async login(data: LoginDTO): Promise<LoginResponseDTO> {
     // Find user by email
     const user = await this.userRepository.findByEmail(data.email);
+    //console.log('User found:', user);
     if (!user) {
       throw new UnauthorizedError('Invalid email or password');
     }
@@ -64,6 +65,7 @@ export class AuthService implements IAuthService {
 
     // Verify password
     const isPasswordValid = await comparePassword(data.password, user.passwordHash || '');
+    //console.log('Password valid:', isPasswordValid);
     if (!isPasswordValid) {
       throw new UnauthorizedError('Invalid email or password');
     }
@@ -94,7 +96,7 @@ export class AuthService implements IAuthService {
   // #region Refresh Token
   async refreshToken(refreshToken: string): Promise<RefreshTokenResponseDTO> {
     // Check if token is blacklisted
-    if (tokenBlacklistService.isBlacklisted(refreshToken)) {
+    if (this.tokenBlacklistService.isBlacklisted(refreshToken)) {
       throw new UnauthorizedError('Token has been revoked');
     }
 
@@ -116,7 +118,7 @@ export class AuthService implements IAuthService {
     const tokens = generateTokenPair(user.id, user.email, user.role);
 
     // Blacklist old refresh token
-    tokenBlacklistService.addToken(refreshToken);
+    this.tokenBlacklistService.addToken(refreshToken);
 
     return tokens;
   }
@@ -125,8 +127,8 @@ export class AuthService implements IAuthService {
   // #region Logout
   async logout(accessToken: string, refreshToken: string): Promise<void> {
     // Add both tokens to blacklist
-    tokenBlacklistService.addToken(accessToken);
-    tokenBlacklistService.addToken(refreshToken);
+    this.tokenBlacklistService.addToken(accessToken);
+    this.tokenBlacklistService.addToken(refreshToken);
   }
   // #endregion
 

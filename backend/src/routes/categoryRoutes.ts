@@ -4,7 +4,7 @@ import { CategoryController } from '../controllers/CategoryController.js';
 import { CategoryService } from '../services/CategoryService.js';
 import { CategoryRepository } from '../repository/categoryRepository.js';
 import { prisma } from '../config/prisma.js'
-import { authenticate, authorize } from '../middleware/auth';
+import { authenticate, authorize } from '../middleware/auth.js';
 /**
  * Category Routes
  * 

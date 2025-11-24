@@ -8,6 +8,7 @@ import categoryRoutes from './routes/categoryRoutes.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import { cacheService } from './services/CacheService.js';
 import { prisma } from './config/prisma.js';
+import authRoutes from './routes/authRoutes.js';
 // Load environment variables
 dotenv.config();
 
@@ -101,6 +102,12 @@ app.post('/cache/clear', (_, res) => {
  * Mount all API routes under /api prefix
  */
 app.use('/api/categories', categoryRoutes);
+
+/**
+ * Authentication Routes
+ * Handles user registration, login, and token refresh
+ */
+app.use('/api/auth', authRoutes);
 
 // #endregion
 

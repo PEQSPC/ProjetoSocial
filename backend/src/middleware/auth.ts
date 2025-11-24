@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { verifyAccessToken, extractTokenFromHeader } from '../config/jwt';
 
+import { verifyAccessToken, extractTokenFromHeader } from '../config/jwt.js';
 import { tokenBlacklistService } from '../services/TokenBlacklistService.js';
 import { UnauthorizedError, ForbiddenError } from '../utils/errors.js';
 

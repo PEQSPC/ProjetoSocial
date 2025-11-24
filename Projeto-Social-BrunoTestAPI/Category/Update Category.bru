@@ -1,0 +1,22 @@
+meta {
+  name: Update Category
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3000/api/categories/fa1d35da-30b9-4e35-94f4-56816948feb2
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Pessego Peludo"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
