@@ -18,3 +18,8 @@ After the use case completes, it returns a result to the controller. This result
 npx prisma migrate dev --name init
 
 npx prisma migrate dev --name initial-migration
+
+## Docker
+
+in backend root folder
+docker build -t my-app:version .

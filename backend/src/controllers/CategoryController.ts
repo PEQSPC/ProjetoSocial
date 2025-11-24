@@ -8,7 +8,8 @@ import {
   CategoryResponseDTO,
 } from '../types/dto/category.dto.js';
 import { ValidationError } from '../utils/errors.js';
-import { ICategoryService } from 'services/interfaces/ICategoryService.js';
+import { ICategoryService } from '../services/interfaces/ICategoryService.js';
+import { Category } from '../models/Category.js';
 //import { prisma } from '../config/prisma.js';
 
 /**
@@ -127,7 +128,7 @@ export class CategoryController {
       const categories = await this.categoryService.getAllCategories(query);
 
       // Format response
-      const dto = categories.map(cat => cat.toDTO());
+      const dto = categories.map((cat: Category) => cat.toDTO());
       // Send response
       res.status(200).json({
         success: true,

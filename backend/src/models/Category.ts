@@ -13,7 +13,7 @@
  * - How data is presented (UI)
  */
 
-import { CategoryResponseDTO } from "types/dto/category.dto";
+import { CategoryResponseDTO } from "../types/dto/category.dto.js";
 
 export class Category {
   constructor(
