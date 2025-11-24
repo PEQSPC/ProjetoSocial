@@ -38,3 +38,6 @@ model AppUser {
 
   @@map("app_users")
 }
+
+
+//create a enum for role 

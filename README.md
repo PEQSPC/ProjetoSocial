@@ -135,6 +135,12 @@ Coming soon...
 
 act -j build-backend -P ubuntu-latest=node:20-bullseye
 
+## Docker Compose
+From your project root (where docker-compose.yml lives):
+docker-compose up --build
+
+docker-compose exec backend npx prisma migrate dev --name initial-migration
+
 ## License
 
 ISC

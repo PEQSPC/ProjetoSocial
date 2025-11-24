@@ -23,3 +23,5 @@ npx prisma migrate dev --name initial-migration
 
 in backend root folder
 docker build -t my-app:version .
+
+docker run -p 3000:3000 --env-file .env my-app-backend:1.1
