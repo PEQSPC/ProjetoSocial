@@ -1,56 +1,26 @@
 {
   "compilerOptions": {
-    /* Language and Environment */
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    
-    /* Modules */
-    "module": "commonjs",
-    "rootDir": "./src",
+    "target": "ES2023",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "baseUrl": "./src",
-    "paths": {
-      "@config/*": ["config/*"],
-      "@controllers/*": ["controllers/*"],
-      "@middleware/*": ["middleware/*"],
-      "@models/*": ["models/*"],
-      "@repositories/*": ["repositories/*"],
-      "@routes/*": ["routes/*"],
-      "@services/*": ["services/*"],
-      "@types/*": ["types/*"],
-      "@utils/*": ["utils/*"]
-    },
-    
-    /* Emit */
-    "outDir": "./dist",
+    "lib": ["ES2023"],
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": "src",
     "sourceMap": true,
-    "removeComments": true,
-    
-    /* Interop Constraints */
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    
-    /* Type Checking */
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    
-    /* Completeness */
     "skipLibCheck": true,
-    
-    /* Experimental */
+
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "ignoreDeprecations": "6.0",
+
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+
+    "types": ["node"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }

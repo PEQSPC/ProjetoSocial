@@ -12,3 +12,9 @@ After the use case completes, it returns a result to the controller. This result
 ## Need to create a new enpoint explain the steps to create one
 
 ## How config files read from env variables
+
+## Prisma
+
+npx prisma migrate dev --name init
+
+npx prisma migrate dev --name initial-migration

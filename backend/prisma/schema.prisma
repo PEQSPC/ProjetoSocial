@@ -1,0 +1,26 @@
+// This tells Prisma to generate a JavaScript/TypeScript client
+// When you run "npx prisma generate", this creates the PrismaClient
+// in your node_modules that you import in your TypeScript code
+generator client {
+  provider = "prisma-client"
+  engineType = "client"
+  output = "../src/generated/prisma"
+}
+
+// This tells Prisma where your database is and what type it is
+// The env() function reads from your .env file
+datasource db {
+  provider = "postgresql"
+}
+
+
+// Simple table for our CRUD example
+model Category {
+  id        String   @id @default(uuid())
+  name      String
+  type      String   // Will be: FOOD, HYGIENE, CLOTHING, etc.
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("categories")
+}
